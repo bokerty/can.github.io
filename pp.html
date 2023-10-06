@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>WebCat</title>
+    
+    
+  </head>
+  <body>	
+	  <h1 id="kg">
+     
+      </h1>
+   <script>
+var a = document.getElementById("kg")
+
+var xhr = new XMLHttpRequest();
+xhr.open('get', 'https://api.bilibili.com/x/relation/stat?vmid=111363591');
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+        var res = JSON.parse(xhr.responseText);
+        // 状态码 200 表示请求成功
+        if(res.code === 0){
+           a.innerText=res.data.follower
+        }
+      
+    }
+}
+xhr.send(null);
+ </script>
+  </body>
+</html>
