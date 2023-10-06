@@ -20,7 +20,7 @@ xhr.onreadystatechange = function () {
         var res = JSON.parse(xhr.responseText);
         // 状态码 200 表示请求成功
         if(res.code === 0){
-           a.innerText=res.data.follower
+           a.innerText=res.data.follower;
         }
       
     }
